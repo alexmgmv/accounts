@@ -1,0 +1,27 @@
+<div class="example-container" [formGroup]="accountForm">
+    <p>
+        <mat-form-field appearance="fill">
+            <mat-label>Account Number</mat-label>
+            <input matInput placeholder="GR1234567890123456789012345" formControlName="accountNo">
+            <mat-error *ngIf="accountNumberControl.invalid">{{getErrorMessage('account')}}</mat-error>
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="fill">
+            <mat-label>Amount in &euro;</mat-label>
+            <input matInput placeholder="0" formControlName="amount">
+            <mat-error *ngIf="amountControl.invalid">{{getErrorMessage('amount')}}</mat-error>
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="John Doe" formControlName="user">
+            <mat-error *ngIf="userControl.invalid">{{getErrorMessage('user')}}</mat-error>
+        </mat-form-field>
+    </p>
+
+    <button mat-raised-button color="primary" (click)="onCreate()">Create Account</button>
+</div>

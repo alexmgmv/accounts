@@ -1,0 +1,48 @@
+<div class="example-container" *ngIf="account$ | async" [formGroup]="accountForm">
+    <p>
+        <mat-form-field appearance="fill">
+            <mat-label>Account Number</mat-label>
+            <input matInput formControlName="accountNo">
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="fill">
+            <mat-label>Creation Date</mat-label>
+            <input matInput formControlName="createdAt">
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="fill">
+            <mat-label>Amount in &euro;</mat-label>
+            <input matInput formControlName="amount">
+            <mat-error *ngIf="amountControl.invalid">{{getErrorMessage('amount')}}</mat-error>
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="user">
+            <mat-error *ngIf="userControl.invalid">{{getErrorMessage('user')}}</mat-error>
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="fill">
+            <mat-label>Account ID</mat-label>
+            <input matInput formControlName="id">
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="fill">
+            <mat-label>User ID</mat-label>
+            <input matInput formControlName="userId">
+        </mat-form-field>
+    </p>
+
+    <button mat-raised-button (click)="onReturn()">Back</button>
+    <button mat-raised-button color="primary" (click)="onEdit()">Save</button>
+</div>

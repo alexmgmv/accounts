@@ -1,0 +1,34 @@
+<mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="isExpanded = !isExpanded">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="example-app-name">Accounts App</h1>
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container" autosize>
+    <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()"
+        (mouseleave)="mouseleave()">
+        <mat-nav-list>
+
+            <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" routerLink="/home">
+                <span class="full-width" *ngIf="isExpanded || isShowing">Home</span>
+                <mat-icon mat-list-icon>home</mat-icon>
+            </mat-list-item>
+
+            <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" routerLink="/account/list">
+                <span class="full-width" *ngIf="isExpanded || isShowing">Accounts</span>
+                <mat-icon mat-list-icon>format_list_bulleted</mat-icon>
+            </mat-list-item>
+
+            <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" routerLink="/account/add">
+                <span class="full-width" *ngIf="isExpanded || isShowing">New Account</span>
+                <mat-icon mat-list-icon>playlist_add</mat-icon>
+            </mat-list-item>
+
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <div class="example-sidenav-content">
+        <router-outlet></router-outlet>
+    </div>
+</mat-sidenav-container>

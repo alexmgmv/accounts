@@ -1,0 +1,19 @@
+.container {
+    h1 {
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    ul {
+        margin: 50px 5vw;
+        font-size: larger;
+
+        .highlight {
+            color: blue;
+        }
+    }
+
+    .button-container {
+        text-align: center;
+    }
+}
